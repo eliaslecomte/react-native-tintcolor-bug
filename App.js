@@ -23,13 +23,13 @@ const App: () => React$Node = () => {
   const [ errorStyle, setErrorStyle ] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timeout = setTimeout(() => {
       console.log(`change show ${!errorStyle}`);
       setErrorStyle(!errorStyle);
     }, 1000);
 
     return () => {
-      clearInterval(interval);
+      clearTimeout(timeout);
     }
   }, [errorStyle]);
 
